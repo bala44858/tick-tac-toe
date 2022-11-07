@@ -18,6 +18,7 @@ class flashScrean : AppCompatActivity() {
 //        }, 3000)
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this,MainActivity::class.java))
+            finish()
         },3000)
 
 
