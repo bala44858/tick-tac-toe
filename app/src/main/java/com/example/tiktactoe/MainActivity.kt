@@ -4,11 +4,14 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
+    var flag1 by Delegates.notNull<Boolean>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        flag1=true
         var box1 = findViewById<TextView>(R.id.b1)
         var box2 = findViewById<TextView>(R.id.b2)
         var box3 = findViewById<TextView>(R.id.b3)
@@ -22,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         var playerName=findViewById<TextView>(R.id.player)
         if (count%2==1) playerName.text="Player O " else playerName.text="Player X"
         box1.setOnClickListener{
-            if (box1.text=="") {
+            if (box1.text=="" && flag1!=false) {
                 if (count % 2 == 0 ) box1.text = "X" else box1.text = "O"
                 count += 1
                 if (count%2==1){
@@ -33,12 +36,12 @@ class MainActivity : AppCompatActivity() {
 
                check(count, box1, box2, box3, box4, box5, box6, box7, box8, box9)
                 var t : TextView = findViewById(R.id.test)
-                t.text="working "+count
+//                t.text="working "+count
             }
 
         }
         box2.setOnClickListener{
-            if ( box2.text=="") {
+            if ( box2.text=="" && flag1!=false) {
                 if (count % 2 == 0) box2.text = "X" else box2.text = "O"
                 count += 1
                 if (count%2==1) playerName.text="Player O " else playerName.text="Player X"
@@ -47,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         box3.setOnClickListener{
-            if ( box3.text=="") {
+            if ( box3.text=="" && flag1!=false) {
                 if (count % 2 == 0) box3.text = "X" else box3.text = "O"
                 count += 1
                 if (count%2==1) playerName.text="Player O " else playerName.text="Player X"
@@ -56,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         box4.setOnClickListener{
-            if ( box4.text=="") {
+            if ( box4.text==""&& flag1!=false) {
                 if (count % 2 == 0) box4.text = "X" else box4.text = "O"
                 count += 1
                 if (count%2==1) playerName.text="Player O " else playerName.text="Player X"
@@ -65,7 +68,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         box5.setOnClickListener{
-            if ( box5.text=="") {
+            if ( box5.text==""&& flag1!=false) {
                 if (count % 2 == 0) box5.text = "X" else box5.text = "O"
                 count += 1
                 if (count%2==1) playerName.text="Player O " else playerName.text="Player X"
@@ -74,7 +77,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         box6.setOnClickListener{
-            if ( box6.text=="") {
+            if ( box6.text==""&& flag1!=false) {
                 if (count % 2 == 0) box6.text = "X" else box6.text = "O"
                 count += 1
                 if (count%2==1) playerName.text="Player O " else playerName.text="Player X"
@@ -83,7 +86,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         box7.setOnClickListener{
-            if (box7.text=="") {
+            if (box7.text==""&& flag1!=false) {
                 if (count % 2 == 0) box7.text = "X" else box7.text = "O"
                 count += 1
                 if (count%2==1) playerName.text="Player O " else playerName.text="Player X"
@@ -92,7 +95,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         box8.setOnClickListener{
-            if ( box8.text=="") {
+            if ( box8.text==""&& flag1!=false) {
                 if (count % 2 == 0) box8.text = "X" else box8.text = "O"
                 count += 1
                 if (count%2==1) playerName.text="Player O " else playerName.text="Player X"
@@ -101,7 +104,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         box9.setOnClickListener{
-            if (box9.text=="") {
+            if (box9.text==""&& flag1!=false) {
                 if (count % 2 == 0) box9.text = "X" else box9.text = "O"
                 count += 1
                 if (count%2==1) playerName.text="Player O " else playerName.text="Player X"
@@ -115,8 +118,8 @@ class MainActivity : AppCompatActivity() {
 
     fun check(count:Int,box1:TextView,box2: TextView,box3: TextView,box4: TextView,box5: TextView,box6: TextView,box7: TextView,box8: TextView,box9: TextView){
         var checkLable : TextView=findViewById(R.id.finalText)
-        var flag1=true
-        findViewById<TextView>(R.id.test).text="enter into the checking "
+        flag1=true
+//        findViewById<TextView>(R.id.test).text="enter into the checking "
         if (box1.text==box2.text && box2.text==box3.text && box1.text!=""){
             box1.setTextColor(Color.parseColor("#70E880"))
             box2.setTextColor(Color.parseColor("#70E880"))
