@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.widget.ButtonBarLayout
 import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         flag1=true
+
         var box1 = findViewById<TextView>(R.id.b1)
         var box2 = findViewById<TextView>(R.id.b2)
         var box3 = findViewById<TextView>(R.id.b3)
@@ -125,6 +127,7 @@ class MainActivity : AppCompatActivity() {
             box2.setTextColor(Color.parseColor("#70E880"))
             box3.setTextColor(Color.parseColor("#70E880"))
             checkLable.text= "WON "+ box1.text+""
+            findViewById<TextView>(R.id.player).text="Game Over"
             flag1=false
         }
 
@@ -133,6 +136,8 @@ class MainActivity : AppCompatActivity() {
             box4.setTextColor(Color.parseColor("#70E880"))
             box5.setTextColor(Color.parseColor("#70E880"))
             box6.setTextColor(Color.parseColor("#70E880"))
+            findViewById<TextView>(R.id.player).text="Game Over"
+
             flag1=false
         }
         if (box7.text==box8.text && box7.text==box9.text && box9.text!=""){
@@ -140,6 +145,8 @@ class MainActivity : AppCompatActivity() {
             box7.setTextColor(Color.parseColor("#70E880"))
             box8.setTextColor(Color.parseColor("#70E880"))
             box9.setTextColor(Color.parseColor("#70E880"))
+            findViewById<TextView>(R.id.player).text="Game Over"
+
             flag1=false
         }
 //        vertical start
@@ -155,6 +162,8 @@ class MainActivity : AppCompatActivity() {
             box5.setTextColor(Color.parseColor("#70E880"))
             box2.setTextColor(Color.parseColor("#70E880"))
             box8.setTextColor(Color.parseColor("#70E880"))
+            findViewById<TextView>(R.id.player).text="Game Over"
+
             flag1=false
         }
         if (box3.text==box6.text && box3.text==box9.text && box3.text!=""){
@@ -162,6 +171,8 @@ class MainActivity : AppCompatActivity() {
             box6.setTextColor(Color.parseColor("#70E880"))
             box9.setTextColor(Color.parseColor("#70E880"))
             box3.setTextColor(Color.parseColor("#70E880"))
+            findViewById<TextView>(R.id.player).text="Game Over"
+
             flag1=false
         }
 //        cross region
@@ -170,6 +181,8 @@ class MainActivity : AppCompatActivity() {
             box1.setTextColor(Color.parseColor("#70E880"))
             box5.setTextColor(Color.parseColor("#70E880"))
             box9.setTextColor(Color.parseColor("#70E880"))
+            findViewById<TextView>(R.id.player).text="Game Over"
+
             flag1=false
         }
         if (box3.text==box5.text && box3.text==box7.text && box3.text!=""){
@@ -177,6 +190,8 @@ class MainActivity : AppCompatActivity() {
             box5.setTextColor(Color.parseColor("#70E880"))
             box7.setTextColor(Color.parseColor("#70E880"))
             box3.setTextColor(Color.parseColor("#70E880"))
+            findViewById<TextView>(R.id.player).text="Game Over"
+
             flag1=false
         }
 //        if (box1.text==box2.text && box1.text==box3.text) {
@@ -222,6 +237,8 @@ class MainActivity : AppCompatActivity() {
             box6.setTextColor(Color.parseColor("#D62929"))
             box7.setTextColor(Color.parseColor("#D62929"))
             box8.setTextColor(Color.parseColor("#D62929"))
+            findViewById<TextView>(R.id.player).text="Game Over"
+
             box9.setTextColor(Color.parseColor("#D62929"))
             checkLable.text="draw.."
         }

@@ -154,6 +154,22 @@
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridbox" />
+        app:layout_constraintTop_toBottomOf="@+id/gridbox"
+        app:layout_constraintBottom_toTopOf="@+id/btn"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        android:text="play Again."
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/finalText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
