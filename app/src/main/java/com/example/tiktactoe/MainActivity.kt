@@ -1,5 +1,6 @@
 package com.example.tiktactoe
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -24,9 +25,15 @@ class MainActivity : AppCompatActivity() {
             if (box1.text=="") {
                 if (count % 2 == 0 ) box1.text = "X" else box1.text = "O"
                 count += 1
-                if (count%2==1) playerName.text="Player O " else playerName.text="Player X"
+                if (count%2==1){
+                    playerName.text="Player O "
+                } else {
+                    playerName.text="Player X"
+                }
 
                check(count, box1, box2, box3, box4, box5, box6, box7, box8, box9)
+                var t : TextView = findViewById(R.id.test)
+                t.text="working "+count
             }
 
         }
@@ -109,40 +116,110 @@ class MainActivity : AppCompatActivity() {
     fun check(count:Int,box1:TextView,box2: TextView,box3: TextView,box4: TextView,box5: TextView,box6: TextView,box7: TextView,box8: TextView,box9: TextView){
         var checkLable : TextView=findViewById(R.id.finalText)
         var flag1=true
-        if (box1.text==box2.text && box1.text==box3.text) {
-            checkLable.text=box1.text
-            flag1=false
-        }
-        if (box4.text==box5.text && box4.text==box6.text) {
-            checkLable.text=box4.text
-            flag1=false
-        }
-        if (box7.text==box8.text && box7.text==box9.text) {
-            checkLable.text=box7.text
-            flag1=false
-        }
-        if (box1.text==box4.text && box4.text==box7.text) {
-            checkLable.text=box7.text
-            flag1=false
-        }
-        if (box2.text==box5.text && box2.text==box8.text) {
-            checkLable.text=box2.text
-            flag1=false
-        }
-        if (box3.text==box6.text && box3.text==box9.text) {
-            checkLable.text=box3.text
-            flag1=false
-        }
-        if (box1.text==box5.text && box5.text==box9.text) {
-            checkLable.text=box5.text
-            flag1=false
-        }
-        if (box3.text==box5.text && box5.text==box7.text) {
-            checkLable.text=box5.text
+        findViewById<TextView>(R.id.test).text="enter into the checking "
+        if (box1.text==box2.text && box2.text==box3.text && box1.text!=""){
+            box1.setTextColor(Color.parseColor("#70E880"))
+            box2.setTextColor(Color.parseColor("#70E880"))
+            box3.setTextColor(Color.parseColor("#70E880"))
+            checkLable.text= "WON "+ box1.text+""
             flag1=false
         }
 
+        if (box5.text==box4.text && box4.text==box6.text&& box4.text!=""){
+            checkLable.text= "WON "+ box4.text+""
+            box4.setTextColor(Color.parseColor("#70E880"))
+            box5.setTextColor(Color.parseColor("#70E880"))
+            box6.setTextColor(Color.parseColor("#70E880"))
+            flag1=false
+        }
+        if (box7.text==box8.text && box7.text==box9.text && box9.text!=""){
+            checkLable.text= "WON "+ box7.text+""
+            box7.setTextColor(Color.parseColor("#70E880"))
+            box8.setTextColor(Color.parseColor("#70E880"))
+            box9.setTextColor(Color.parseColor("#70E880"))
+            flag1=false
+        }
+//        vertical start
+        if (box1.text==box4.text && box4.text==box7.text && box1.text!=""){
+            checkLable.text= "WON "+ box4.text+""
+            box1.setTextColor(Color.parseColor("#70E880"))
+            box4.setTextColor(Color.parseColor("#70E880"))
+            box7.setTextColor(Color.parseColor("#70E880"))
+            flag1=false
+        }
+        if (box2.text==box5.text && box2.text==box8.text && box2.text!=""){
+            checkLable.text= "WON "+ box2.text+""
+            box5.setTextColor(Color.parseColor("#70E880"))
+            box2.setTextColor(Color.parseColor("#70E880"))
+            box8.setTextColor(Color.parseColor("#70E880"))
+            flag1=false
+        }
+        if (box3.text==box6.text && box3.text==box9.text && box3.text!=""){
+            checkLable.text= "WON "+ box3.text+""
+            box6.setTextColor(Color.parseColor("#70E880"))
+            box9.setTextColor(Color.parseColor("#70E880"))
+            box3.setTextColor(Color.parseColor("#70E880"))
+            flag1=false
+        }
+//        cross region
+        if (box1.text==box5.text && box1.text==box9.text && box1.text!=""){
+            checkLable.text= "WON "+ box1.text+""
+            box1.setTextColor(Color.parseColor("#70E880"))
+            box5.setTextColor(Color.parseColor("#70E880"))
+            box9.setTextColor(Color.parseColor("#70E880"))
+            flag1=false
+        }
+        if (box3.text==box5.text && box3.text==box7.text && box3.text!=""){
+            checkLable.text= "WON "+ box3.text+""
+            box5.setTextColor(Color.parseColor("#70E880"))
+            box7.setTextColor(Color.parseColor("#70E880"))
+            box3.setTextColor(Color.parseColor("#70E880"))
+            flag1=false
+        }
+//        if (box1.text==box2.text && box1.text==box3.text) {
+//            checkLable.text=box1.text
+//            flag1=false
+//        }
+//        if (box4.text==box5.text && box4.text==box6.text) {
+//            checkLable.text=box4.text
+//            flag1=false
+//        }
+//        if (box7.text==box8.text && box7.text==box9.text) {
+//            checkLable.text=box7.text
+//            flag1=false
+//        }
+//        if (box1.text==box4.text && box4.text==box7.text) {
+//            checkLable.text=box7.text
+//            findViewById<TextView>(R.id.test).text="try changhe on last box 1"
+//            flag1=false
+//        }
+//        if (box2.text==box5.text && box2.text==box8.text) {
+//            checkLable.text=box2.text
+//            flag1=false
+//        }
+//        if (box3.text==box6.text && box3.text==box9.text) {
+//            checkLable.text=box3.text
+//            flag1=false
+//        }
+//        if (box1.text==box5.text && box5.text==box9.text) {
+//            checkLable.text=box5.text
+//            flag1=false
+//        }
+//        if (box3.text==box5.text && box5.text==box7.text) {
+//            checkLable.text=box5.text
+//            flag1=false
+//        }
+//
         if (count==10 && flag1) {
+            box1.setTextColor(Color.parseColor("#D62929"))
+            box2.setTextColor(Color.parseColor("#D62929"))
+            box3.setTextColor(Color.parseColor("#D62929"))
+            box4.setTextColor(Color.parseColor("#D62929"))
+            box5.setTextColor(Color.parseColor("#D62929"))
+            box6.setTextColor(Color.parseColor("#D62929"))
+            box7.setTextColor(Color.parseColor("#D62929"))
+            box8.setTextColor(Color.parseColor("#D62929"))
+            box9.setTextColor(Color.parseColor("#D62929"))
             checkLable.text="draw.."
         }
     }
