@@ -3,6 +3,7 @@ package com.example.tiktactoe
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.widget.ButtonBarLayout
 import kotlin.properties.Delegates
@@ -113,6 +114,24 @@ class MainActivity : AppCompatActivity() {
                 check(count, box1, box2, box3, box4, box5, box6, box7, box8, box9)
 
             }
+        }
+//        this code for restart thr game
+        var b=findViewById<Button>(R.id.btn1)
+        b.setOnClickListener {
+            box1.text=""
+            box2.text=""
+            box3.text=""
+            box4.text=""
+            box5.text=""
+            box6.text=""
+            box7.text=""
+            box8.text=""
+            box9.text=""
+            flag1=true
+            findViewById<TextView>(R.id.finalText).text=""
+            count=1
+            if (count%2==1) playerName.text="Player O " else playerName.text="Player X"
+
         }
 
 
